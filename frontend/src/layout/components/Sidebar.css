@@ -1,0 +1,45 @@
+.al-sidebar {
+    width: 220px; /* Adjusted width */
+    background-color: #2c3e50; /* Dark blue sidebar background */
+    height: 100vh;
+    position: fixed;
+    color: #ecf0f1; /* Light text color */
+    font-family: 'Lato', sans-serif; /* Font style matching the reference */
+  }
+  
+  .sidebar-header {
+    padding: 20px;
+    background-color: #34495e; /* Slightly lighter blue */
+    text-align: center;
+    font-size: 1.5em;
+    color: #ecf0f1;
+  }
+  
+  .al-sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .al-sidebar-list-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #34495e;
+  }
+  
+  .al-sidebar-list-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    font-size: 1.1em;
+  }
+  
+  .al-sidebar-list-link:hover,
+  .al-sidebar-list-item.selected .al-sidebar-list-link {
+    background-color: #1abc9c; /* Greenish hover and selected state */
+    color: #ffffff;
+  }
+  
+  .al-sidebar-list-link i {
+    margin-right: 10px;
+  }
+  

@@ -1,10 +1,9 @@
-import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Sidebar.css'; 
 
 export class Sidebar extends React.Component {
-
   static propTypes = {
     location: PropTypes.shape({
       pathname: PropTypes.string,
@@ -12,24 +11,12 @@ export class Sidebar extends React.Component {
     }),
   }
 
-  static defaultProps = {
-    location: {
-      pathname: '',
-      query: {},
-    },
-  }
-
   state = {
     navItems: [
       { pathname: '/', label: 'Home', icon: 'home' },
-      { pathname: '/about', label: 'About', icon: 'info' },
-      { pathname: '/table-demo', label: 'Tables', icon: 'table' },
-      { pathname: '/button-demo', label: 'Buttons', icon: 'dot-circle-o' },
-      { pathname: '/progress-bars', label: 'Progress Bars', icon: 'spinner'},
-      { pathname: '/modal-demo', label: 'Modals', icon: 'clipboard' },
-      { pathname: '/tabs-demo', label: 'Tabs', icon: 'list-ul' },
-      { pathname: '/input-demo', label: 'Inputs', icon: 'check-square' },
-      { pathname: '/notifications-demo', label: 'Notifications', icon: 'exclamation' },
+      { pathname: '/portfolio', label: 'Portfolio', icon: 'briefcase' },
+      { pathname: '/pipeline', label: 'Pipeline', icon: 'chart-line' },
+      { pathname: '/award-search', label: 'Award Search', icon: 'search' },
     ],
   }
 
@@ -38,21 +25,22 @@ export class Sidebar extends React.Component {
   }
 
   renderLinks() {
-    return _.map(this.state.navItems, (navItem) => {
-      return (
-        <li className={`al-sidebar-list-item ${this.isSelected(navItem)}`} key={navItem.pathname}>
-          <Link className="al-sidebar-list-link" to={{ pathname: navItem.pathname, query: navItem.query }}>
-            <i className={`fa fa-${navItem.icon}`}></i>
-            <span>{navItem.label}</span>
-          </Link>
-        </li>
-      );
-    });
+    return this.state.navItems.map((navItem) => (
+      <li className={`al-sidebar-list-item ${this.isSelected(navItem)}`} key={navItem.pathname}>
+        <Link className="al-sidebar-list-link" to={navItem.pathname}>
+          <i className={`fa fa-${navItem.icon}`}></i>
+          <span>{navItem.label}</span>
+        </Link>
+      </li>
+    ));
   }
 
   render() {
     return (
       <aside className="al-sidebar">
+        <div className="sidebar-header">
+          <h2>VYNE</h2>
+        </div>
         <ul className="al-sidebar-list">
           {this.renderLinks()}
         </ul>

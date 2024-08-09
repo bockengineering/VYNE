@@ -1,7 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Lato', sans-serif; /* Font style matching the reference */
+}
 
-body {
-  @apply bg-jira-gray text-jira-text;
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50; /* Darker heading color */
+  font-weight: 300;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
 }
